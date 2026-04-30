@@ -1,0 +1,86 @@
+```PowerShell
+Brute-Force-Kali
+index="windows_security" EventCode=4625 | table Account_Name, Source_Network_Address | stats count by Account_Name | where count > 10
+
+
+
+Brute-Force-Kali-2
+index="windows_security" EventCode=4625 | table Account_Name, Source_Network_Address | stats count by Account_Name, Source_Network_Address | where count > 10
+
+
+
+Client-Powershell-Blocking-Script
+index="windows_client_security" source="WinEventLog:Microsoft-Windows-PowerShell/Operational" EventCode=4104
+
+
+Client-Powershell-Module-Logging
+index="windows_client_security" source="WinEventLog:Microsoft-Windows-PowerShell/Operational" EventCode=4103
+
+
+Failed-Logon(4625)---Pre-Auth-Fauled(4771)
+(index="windows_security" EventCode=4771) OR (index="windows_security" EventCode=4625) | stats count by EventCode, Account_Name
+
+
+kali-Brute-Force
+index="windows_security" EventCode=462* | stats count by Source_Network_Address, Logon_Type | where count > 30000
+
+kerberoasting-below-1hour-Brute-Force
+index="windows_security" EventCode=4769 | stats count min(_time) as firstTime max(_time) as lastTime by Account_Name, Client_Address | eval duration=lastTime-firstTime | where count > 15 AND duration < 3600
+
+
+
+
+Kerberosting-Basic
+index="windows_security" EventCode=4769 | stats count by Account_Name, ServiceName, Client_Address | where count > 10
+
+
+
+kerberosting-Encryption-0x17
+index=windows EventCode=4769 Ticket_Encryption_Type=0x17 | stats count by Account_Name, Client_Address | where count > 5
+
+
+
+Server-Applications
+index="windows_lab" source="WinEventLog:Application"
+
+
+
+Server-Golden-Ticket-Passwordspray
+index="windows_security" index=windows EventCode=4771 | stats count by Client_Address | where count > 10
+
+
+Server-Sysmon
+index="windows_security" source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+
+
+
+Server-System
+index="windows_lab" source="WinEventLog:Application"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
