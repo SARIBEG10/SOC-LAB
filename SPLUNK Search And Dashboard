@@ -59,6 +59,11 @@ index="windows_lab" source="WinEventLog:Application"
 
 
 
+Golden Ticket Detection 4769 → 4624 Event IDs Without 6768 before them
+index=windows EventCode=4769
+| join Account_Name
+    [ search index=windows EventCode=4768 | stats count by Account_Name ]
+| where isnull(count)
 
 
 
