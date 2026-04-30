@@ -1,0 +1,40 @@
+
+[main]
+bucketRebuildMemoryHint = 0
+minHotIdleSecsBeforeForceRoll = 0
+rtRouterQueueSize = 
+rtRouterThreads = 
+selfStorageThreads = 
+tsidxWritingLevel = 
+zstdCompressionStrategy = 
+
+[windows_lab]
+homePath = E:\SplunkData\windows_lab\db
+coldPath = E:\SplunkData\windows_lab\colddb
+thawedPath = E:\SplunkData\windows_lab\thaweddb
+frozenPath = E:\SplunkData\windows_lab\frozen
+
+maxTotalDataSizeMB = 10240
+frozenTimePeriodInSecs = 2592000
+maxDataSize = auto
+
+[windows_security]
+homePath = E:\SplunkData\windows_security\db
+coldPath = E:\SplunkData\windows_security\colddb
+thawedPath = E:\SplunkData\windows_security\thaweddb
+frozenPath = E:\SplunkData\windows_security\frozen
+
+maxTotalDataSizeMB = 10240
+frozenTimePeriodInSecs = 2592000
+maxDataSize = auto
+
+
+[windows_client_security]
+homePath = E:\SplunkData2\windows_client_security\db
+coldPath = E:\SplunkData2\windows_client_security\colddb
+thawedPath = E:\SplunkData2\windows_client_security\thaweddb
+frozenPath = E:\SplunkData\windows_client_security\frozen
+
+maxTotalDataSizeMB = 10240
+frozenTimePeriodInSecs = 2592000
+maxDataSize = auto
