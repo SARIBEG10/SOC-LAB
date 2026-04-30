@@ -19,7 +19,7 @@ IP: 192.168.198.141                                            |
                                                                |           Tools:
                                                                |           - IMPACKET
                                                                |           - CRACKMAPEXEC
-                                                               |           - KERBEROASTING
+                                                               |         
 Ports:                                                         | 
 - 8000 Web                                                     |  
 - 9997 Receiver                                                |
