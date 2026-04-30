@@ -1,4 +1,4 @@
-```PowerShell
+
 Brute-Force-Kali
 index="windows_security" EventCode=4625 | table Account_Name, Source_Network_Address | stats count by Account_Name | where count > 10
 
@@ -56,20 +56,6 @@ index="windows_security" source="WinEventLog:Microsoft-Windows-Sysmon/Operationa
 
 Server-System
 index="windows_lab" source="WinEventLog:Application"
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
